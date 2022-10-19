@@ -47,14 +47,16 @@ def weather():
 
     zipcode = request.args.get('zipcode')
     weather_info = WEATHER.get(zipcode, DEFAULT_WEATHER)
-    print(weather_info)
+    # print(weather_info)
     return jsonify(weather_info)
 
 
 @app.route('/order-melons.json', methods=['POST'])
 def order_melons():
     """Order melons and return a dictionary of result-code and result-msg."""
+    # print(melon_type)
     melon = request.json.get('melon_type')
+    # print(melon)
     qty = int(request.json.get('qty'))
 
     if qty > 10:
